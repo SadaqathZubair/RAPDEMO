@@ -1,0 +1,52 @@
+projection;
+strict ;
+use draft;
+
+define behavior for ZDMO_C_RAPG_ProjectTPd alias Project
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+  use action createProjectAndRootNode;
+
+  use association _Log { with draft; }
+  use association _Node { with draft; }
+
+
+
+}
+
+define behavior for ZDMO_C_RAPG_LogTPd alias Log
+{
+  use update;
+  use delete;
+
+  use association _Project { with draft; }
+}
+
+define behavior for ZDMO_C_RAPG_NodeTPd alias Node
+{
+  use update;
+  use delete;
+
+  use association _Project { with draft; }
+  use association _Field
+  {
+    //   create;
+    with draft; }
+}
+
+define behavior for ZDMO_C_RAPG_FieldTPd alias Field
+{
+  use update;
+  use delete;
+
+ use association _Project { with draft; }
+  use association _Node { with draft; }
+}

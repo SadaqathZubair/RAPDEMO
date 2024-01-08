@@ -1,0 +1,7 @@
+@ObjectModel.leadingEntity.name: 'ZC_ch_test01TPD'
+define service ZUI_ch_test01D {
+  expose ZC_CH_TEST01TPD as ch_test;
+  expose ZC_ZSALESITEMTPD as zsalesitem;
+  expose I_UNITOFMEASURE as UnitOfMeasure;
+  expose I_CURRENCY as Currency;
+}

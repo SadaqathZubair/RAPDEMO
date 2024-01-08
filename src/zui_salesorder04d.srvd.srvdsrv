@@ -1,0 +1,7 @@
+@ObjectModel.leadingEntity.name: 'ZC_SalesOrder04TPD'
+define service ZUI_SalesOrder04D {
+  expose ZC_SALESORDER04TPD as SalesOrder;
+  expose ZC_ITEM02TPD as Item;
+  expose I_UNITOFMEASURE as UnitOfMeasure;
+  expose I_CURRENCY as Currency;
+}

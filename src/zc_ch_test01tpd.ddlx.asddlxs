@@ -1,0 +1,113 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'ch_test', 
+    typeNamePlural: 'ch_tests', 
+    title: {
+      type: #STANDARD, 
+      label: 'ch_test', 
+      value: 'SalesorderID'
+    }
+  }, 
+  presentationVariant: [ {
+    sortOrder: [ {
+      by: 'SalesorderID', 
+      direction: #DESC
+    } ], 
+    visualizations: [ {
+      type: #AS_LINEITEM
+    } ]
+  } ]
+}
+annotate view ZC_ch_test01TPd with
+{
+  @UI.facet: [ {
+    id: 'idCollection', 
+    type: #COLLECTION, 
+    label: 'ch_test', 
+    position: 10 
+  }, 
+  {
+    id: 'idIdentification', 
+    parentId: 'idCollection', 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'General Information', 
+    position: 20 
+  }, 
+  {
+    id: 'idzsalesitem', 
+    type: #LINEITEM_REFERENCE, 
+    label: 'zsalesitem', 
+    position: 30 , 
+    targetElement: '_zsalesitem'
+  } ]
+  @UI.hidden: true
+  HeaderUUID;
+  
+  @UI.lineItem: [ {
+    position: 20 , 
+    importance: #HIGH, 
+    label: 'SalesorderID'
+  } ]
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'SalesorderID'
+  } ]
+  @UI.selectionField: [ {
+    position: 20 
+  } ]
+  SalesorderID;
+  
+  @UI.lineItem: [ {
+    position: 30 , 
+    importance: #HIGH, 
+    label: 'TotalAmount'
+  } ]
+  @UI.identification: [ {
+    position: 30 , 
+    label: 'TotalAmount'
+  } ]
+  TotalAmount;
+  
+  @UI.selectionField: [ {
+    position: 40 
+  } ]
+  CurrencyCode;
+  
+  @UI.lineItem: [ {
+    position: 50 , 
+    importance: #HIGH, 
+    label: 'Description'
+  } ]
+  @UI.identification: [ {
+    position: 50 , 
+    label: 'Description'
+  } ]
+  Description;
+  
+  @UI.lineItem: [ {
+    position: 60 , 
+    importance: #HIGH, 
+    label: 'OverallStatus'
+  } ]
+  @UI.identification: [ {
+    position: 60 , 
+    label: 'OverallStatus'
+  } ]
+  OverallStatus;
+  
+  @UI.hidden: true
+  CreatedAt;
+  
+  @UI.hidden: true
+  CreatedBy;
+  
+  @UI.hidden: true
+  LastChangedBy;
+  
+  @UI.hidden: true
+  LastChangedAt;
+  
+  @UI.hidden: true
+  LocalLastChangedAt;
+}

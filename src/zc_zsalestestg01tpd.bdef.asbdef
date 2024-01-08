@@ -1,0 +1,19 @@
+projection;
+strict ( 2 );
+
+define behavior for ZC_zsalesTestG01TPd alias zsalesTestG
+{
+  use create;
+  use update;
+  use delete;
+
+  use association _Zsales { create; }
+}
+
+define behavior for ZC_ZsalesTPd alias Zsales
+{
+  use update;
+  use delete;
+
+  use association _zsalesTestG;
+}

@@ -1,0 +1,188 @@
+managed implementation in class zbp_dmo_r_rapg_projecttpd unique;
+strict;
+
+with draft;
+
+define behavior for ZDMO_R_RAPG_ProjectTPD alias Project
+persistent table zdmo_rapgen_bod
+with additional save
+draft table zdmo_rapgproj00e
+etag master LocalLastChangedAt
+lock master
+total etag LastChangedAt
+authorization master ( global )
+//etag master <field_name>
+
+
+{
+  field ( readonly )
+  RapBoUUID,
+  BoName,
+  // set when being created
+  ImplementationType,
+  DataSourceType,
+  BindingType,
+  DraftEnabled,
+  PackageName,
+  Namespace,
+  // RAP Generator Parameters
+  JsonString,
+  //ADT
+  ADTLink,
+  // administrative fields
+  CreatedAt,
+  CreatedBy,
+  LastChangedBy,
+  LastChangedAt,
+  LocalLastChangedAt;
+
+  static action createProjectAndRootNode parameter ZDMO_I_RAP_GEN_PARAM_NEW_PROJ result [1] $self;
+  determination CalculateBoName on save { create; }
+
+  create;
+  update;
+  delete;
+
+  draft action ( features : instance ) Edit;
+  draft action Activate;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare
+  {
+ }
+
+    association _Log { create;  with draft; }
+    association _Node { create; with draft; }
+
+    mapping for zdmo_rapgen_bod
+    {
+      RapBoUUID                  = RAP_NODE_UUID;
+      BoName                     = BO_NAME;
+      RootEntityName             = ROOT_ENTITY_NAME;
+      Namespace                  = NAMESPACE;
+      PackageName                = PACKAGE_NAME;
+      TransportRequest           = TRANSPORT_REQUEST;
+      SkipActivation             = SKIP_ACTIVATION;
+      AddIViewBasic              = add_i_view_basic;
+      ImplementationType         = IMPLEMENTATION_TYPE;
+      AbapLanguageVersion        = ABAP_LANGUAGE_VERSION;
+      PackageLanguageVersion     = PACKAGE_LANGUAGE_VERSION;
+      DataSourceType             = DATA_SOURCE_TYPE;
+      BindingType                = BINDING_TYPE;
+      DraftEnabled               = DRAFT_ENABLED;
+      Suffix                     = SUFFIX;
+      Prefix                     = PREFIX;
+      MultiInlineEdit            = MULTI_INLINE_EDIT;
+      CustomizingTable           = CUSTOMIZING_TABLE;
+      PublishService             = PUBLISH_SERVICE;
+      AddToManageBusinessConfig  = ADD_TO_MANAGE_BUSINESS_CONFIG;
+      BusinessConfName           = BUSINESS_CONF_NAME;
+      BusinessConfIdentifier     = BUSINESS_CONF_IDENTIFIER;
+      BusinessConfDescription    = BUSINESS_CONF_DESCRIPTION;
+      CreatedAt                  = CREATED_AT;
+      CreatedBy                  = CREATED_BY;
+      LastChangedBy              = LAST_CHANGED_BY;
+      LastChangedAt              = LAST_CHANGED_AT;
+      LocalLastChangedAt         = LOCAL_LAST_CHANGED_AT;
+      JsonString                 = JSON_STRING;
+      JsonIsValid                = JSON_IS_VALID;
+      BoIsGenerated              = BO_IS_GENERATED;
+      BoIsDeleted                = BO_IS_DELETED;
+      ApplJobLogHandle           = APPL_JOB_LOG_HANDLE;
+      JobCount                   = JOB_COUNT;
+      JobName                    = JOB_NAME;
+      ADTLink                    = ADT_LINK;
+      hasSematicKey              = has_semantic_key;
+      isExtensible               = is_extensible;
+      extensibilityElementSuffix = extensibility_element_suffix;
+      JobStatus                  = job_status;
+      JobStatusCriticality       = job_status_criticality;
+      JobStatusText              = job_status_text;
+    }
+
+
+}
+
+define behavior for ZDMO_R_RAPG_LogTPd alias Log
+persistent table zdmo_rapgen_logd
+draft table zdmo_rapglog00dd
+etag master LocalLastChangedAt
+lock dependent by _Project
+authorization dependent by _Project
+//etag master <field_name>
+{
+  field ( readonly )
+  LogUUID,
+  RapBoUUID,
+  //  LogItemNumber,
+  LocalLastChangedAt;
+
+  field ( numbering : managed )
+  LogUUID;
+
+  update;
+  delete;
+  association _Project;
+}
+
+define behavior for ZDMO_R_RAPG_NodeTPd alias Node
+//persistent table <???>
+persistent table zdmo_rapgen_nodd
+draft table zdmo_rapgnode00e
+etag master LocalLastChangedAt
+lock dependent by _Project
+authorization dependent by _Project
+//etag master <field_name>
+{
+  field ( readonly )
+  NodeUUID,
+  RapBoUUID,
+  EntityName,
+  ParentEntityName,
+  IsRootNode,
+  DataSource,
+  ParentDataSource,
+  FieldNameUUID,
+  MdeView,
+  //Hierarchy information (to be adapted)
+  HierarchyDescendantCount,
+  HierarchyDistanceFromRoot,
+  HierarchyDrillState,
+  HierarchyPreorderRank,
+  //administrative field
+  LocalLastChangedAt;
+
+
+  field ( numbering : managed ) NodeUUID;
+
+  update;
+  delete;
+  association _Project;
+  association _Field { create; }
+}
+
+define behavior for ZDMO_R_RAPG_FieldTPd //alias <alias_name>
+persistent table zdmo_rapgen_fldd
+draft table zdmo_rapgfiel00e
+etag master LocalLastChangedAt
+lock dependent by _Project
+authorization dependent by _Project
+//etag master <field_name>
+{
+
+  field ( readonly )
+  FieldUUID,
+  NodeUUID,
+  RapboUUID,
+  DbtableField,
+  LocalLastChangedAt;
+
+  field ( numbering : managed )
+  FieldUUID;
+
+  update;
+  delete;
+
+  association _Project;
+  association _Node;
+}

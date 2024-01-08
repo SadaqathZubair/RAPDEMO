@@ -1,0 +1,26 @@
+managed implementation in class zbp_r_salesorder04tpd unique;
+strict ( 2 );
+
+define behavior for ZR_SalesOrder04TPd //alias <alias_name>
+persistent table zdmo_uuid_headed
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  association _Item { create; }
+}
+
+define behavior for ZR_Item02TPD //alias <alias_name>
+persistent table zdmo_uuid_itemd
+lock dependent by _SalesOrder
+authorization dependent by _SalesOrder
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) ParentUUID;
+  association _SalesOrder;
+}

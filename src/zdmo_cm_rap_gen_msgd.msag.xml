@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZDMO_CM_RAP_GEN_MSGD</ARBGB>
+    <MASTERLANG>E</MASTERLANG>
+    <STEXT>ZDMO_CM_RAP_GEN_MSG</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZDMO_CM_RAP_GEN_MSGD</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>&amp;1 is neither a child node nor a grand child node of the root entity &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZDMO_CM_RAP_GEN_MSGD</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>&amp;1 contains non alpha numeric characters.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZDMO_CM_RAP_GEN_MSGD</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>&amp;1 contains non alpha numeric characters.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZDMO_CM_RAP_GEN_MSGD</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>&amp;1 contains non alpha numeric characters.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZDMO_CM_RAP_GEN_MSGD</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Node &amp;1 is not consistent</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZDMO_CM_RAP_GEN_MSGD</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>&amp;1 is not a supported implementation type.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZDMO_CM_RAP_GEN_MSGD</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>No namespace has been set for the root node.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZDMO_CM_RAP_GEN_MSGD</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Node &amp;1 is not finalized.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZDMO_CM_RAP_GEN_MSGD</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Node &amp;1 is not a root node.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZDMO_CM_RAP_GEN_MSGD</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>The specified semantic key field &amp;1 is not a field of table &amp;2</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZDMO_CM_RAP_GEN_MSGD</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>Repository object &amp;1 already exists</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZDMO_CM_RAP_GEN_MSGD</ARBGB>
+     <MSGNR>012</MSGNR>
+     <TEXT>Cannot check object type &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZDMO_CM_RAP_GEN_MSGD</ARBGB>
+     <MSGNR>013</MSGNR>
+     <TEXT>Parameter &amp;1 is initial.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZDMO_CM_RAP_GEN_MSGD</ARBGB>
+     <MSGNR>014</MSGNR>
+     <TEXT>Package &amp;1 does not exist</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZDMO_CM_RAP_GEN_MSGD</ARBGB>
+     <MSGNR>015</MSGNR>
+     <TEXT>Table &amp;1 does not exist.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZDMO_CM_RAP_GEN_MSGD</ARBGB>
+     <MSGNR>016</MSGNR>
+     <TEXT>&amp;1 &amp;2 &amp;3 &amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZDMO_CM_RAP_GEN_MSGD</ARBGB>
+     <MSGNR>017</MSGNR>
+     <TEXT>Table contains no UUID based key field &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZDMO_CM_RAP_GEN_MSGD</ARBGB>
+     <MSGNR>018</MSGNR>
+     <TEXT>Table contains no field &amp;1 for parent uuid</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZDMO_CM_RAP_GEN_MSGD</ARBGB>
+     <MSGNR>019</MSGNR>
+     <TEXT>Table contains no field &amp;1 for root uuid</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZDMO_CM_RAP_GEN_MSGD</ARBGB>
+     <MSGNR>020</MSGNR>
+     <TEXT>No table name set</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZDMO_CM_RAP_GEN_MSGD</ARBGB>
+     <MSGNR>021</MSGNR>
+     <TEXT>No semantic key set</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZDMO_CM_RAP_GEN_MSGD</ARBGB>
+     <MSGNR>022</MSGNR>
+     <TEXT>Object name &amp;1 is not unique within BO</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZDMO_CM_RAP_GEN_MSGD</ARBGB>
+     <MSGNR>023</MSGNR>
+     <TEXT>Table &amp;1 and package &amp;2 are not in the same software component</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZDMO_CM_RAP_GEN_MSGD</ARBGB>
+     <MSGNR>024</MSGNR>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZDMO_CM_RAP_GEN_MSGD</ARBGB>
+     <MSGNR>025</MSGNR>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZDMO_CM_RAP_GEN_MSGD</ARBGB>
+     <MSGNR>026</MSGNR>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZDMO_CM_RAP_GEN_MSGD</ARBGB>
+     <MSGNR>027</MSGNR>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZDMO_CM_RAP_GEN_MSGD</ARBGB>
+     <MSGNR>028</MSGNR>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

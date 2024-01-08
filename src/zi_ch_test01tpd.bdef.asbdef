@@ -1,0 +1,18 @@
+interface;
+
+define behavior for ZI_ch_test01TPD alias ZR_CH_TEST01TPD
+{
+  use create;
+  use update;
+  use delete;
+
+  use association _zsalesitem { create; }
+}
+
+define behavior for ZI_zsalesitemTPD alias ZR_ZSALESITEMTPD
+{
+  use update;
+  use delete;
+
+  use association _ch_test;
+}

@@ -1,0 +1,26 @@
+managed implementation in class zbp_r_ch_test01tpd unique;
+strict ( 2 );
+
+define behavior for ZR_ch_test01TPD //alias <alias_name>
+persistent table zdmo_uuid_headed
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  association _zsalesitem { create; }
+}
+
+define behavior for ZR_zsalesitemTPd //alias <alias_name>
+persistent table zdmo_uuid_itemd
+lock dependent by _ch_test
+authorization dependent by _ch_test
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) ParentUUID;
+  association _ch_test;
+}
